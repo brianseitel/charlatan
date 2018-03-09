@@ -1,4 +1,18 @@
-package faker
+package charlatan
+
+import (
+	"bytes"
+	"fmt"
+	"math/rand"
+	"strings"
+)
+
+func name() string {
+	idx := rand.Intn(len(names))
+
+	name := names[idx]
+	return fmt.Sprintf("%s%s", bytes.ToUpper([]byte{name[0]}), strings.ToLower(name[1:]))
+}
 
 var names = []string{
 	"aaron",

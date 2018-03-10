@@ -11,9 +11,9 @@ type charlatanErrors struct {
 	Messages []string
 }
 
-func (ce *charlatanErrors) CheckType(fieldType reflect.Type, expected string) bool {
+func (ce *charlatanErrors) CheckType(name string, fieldType reflect.Type, expected string) bool {
 	if fieldType.String() != expected {
-		ce.Messages = append(ce.Messages, fmt.Sprintf("field %s is of type %s, expected `int`", fieldType, expected))
+		ce.Messages = append(ce.Messages, fmt.Sprintf("field %s is of type %s, expected `%s`", name, fieldType, expected))
 		return false
 	}
 

@@ -5,7 +5,7 @@ import (
 	"math/rand"
 )
 
-func email() string {
+func email() interface{} {
 	idxDomain := rand.Intn(len(domains))
 	idxUser := rand.Intn(len(users))
 

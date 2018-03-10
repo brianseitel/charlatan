@@ -7,7 +7,7 @@ import (
 )
 
 // Generates a UUID string that is RFC 4412 compliant
-func uuid() string {
+func uuid() interface{} {
 	uuid := make([]byte, 16)
 	n, err := io.ReadFull(rand.Reader, uuid)
 	if n != len(uuid) || err != nil {

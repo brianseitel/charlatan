@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func name() string {
+func name() interface{} {
 	idx := rand.Intn(len(names))
 
 	name := names[idx]

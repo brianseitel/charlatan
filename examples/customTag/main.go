@@ -11,6 +11,7 @@ import (
 type User struct {
 	ID            string `charlatan:"uuid"`
 	Name          string `charlatan:"name"`
+	Email         string `charlatan:"email"`
 	FavoriteColor string `charlatan:"hexcolor"`
 	UpdatedAt     string `charlatan:"datetime"`
 }

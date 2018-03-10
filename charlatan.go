@@ -1,7 +1,6 @@
 package charlatan
 
 import (
-	"fmt"
 	"math/rand"
 	"reflect"
 	goTime "time"
@@ -17,6 +16,7 @@ type tag struct {
 	ExpectedType string
 }
 
+// NewTag for registering all of the different faker commands
 func NewTag(name string, callback func() interface{}, expectedType string) tag {
 	return tag{Name: name, Callback: callback, ExpectedType: expectedType}
 }
@@ -127,7 +127,6 @@ func (c SimpleCharlatan) Generate(thing interface{}) (interface{}, error) {
 			t, _ := New().Generate((&newitem).Interface())
 			v.FieldByName(f.Name).Set(reflect.ValueOf(t).Elem())
 		default:
-			fmt.Println(tag)
 			if t, ok := tags[tag]; ok {
 				if errs.CheckType(tag, f.Type, t.ExpectedType) {
 					val := t.Callback()

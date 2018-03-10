@@ -27,22 +27,94 @@ func main() {
 
 ## Fake Data Types
 
-| Type | Tag | Description | Example |
+### Address
+| Type | Tag | Example | Example |
 |---|---|---|---|
-| Email | `email` | A fake email address | `chatty@gmail.com` |
-| Name | `name` | Full name of a person | `Serendipity Jones` |
-| ID | `id` | A number between 0 and 1,000,000 | `6697` |
-| UUID | `uuid` | A standards-compliant UUID | `47036b2f-26af-42cb-92f9-2c6124f90f1347036b2f-26af-42cb-92f9-2c6124f90f13` |
-| Number | `number` | A simple number | `25` |
-| Age | `age` | A number between 0 and 90 | `37` |
-| Float | `float64` | A 64-bit floating point number | `3.36642` |
-| Price | `price` | A dollar amount with two decimals | `2.99` |
-| Word | `word` | A random word | `chicken` |
-| Words | `words` | A random number of random words | `["chicken", "apple", "tesla"]` |
-| URL | `url` | A random URL | `http://www.example.com/foo-bar` |
-| DateTime | `datetime` | An RFC 3339 compliant date time string | `2018-03-08T01:02:05Z` |
-| Date | `date` | A date in the format YYYY-MM-DD | `2018-03-09` |
-| Struct | `struct` | Allows you to nest structs | ~ |
+| address | `address` | `123 Main St, Anywhere, MA 00250` | `string` |
+| city | `city` | `New York` | `string` |
+| latitude | `latitude` | `72.5315` | `float64` |
+| longitude | `longitude` | `-102.555` | `float64` |
+| streetName | `streetName` | `Main St` | `string` |
+| zip | `zip` | `94210` | `string` |
+| state | `state` | `California` | `string` |
+| stateAbbr | `stateAbbr` | `CA` | `string` |
+
+### Base
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| digit | `digit` | `1` | `int64` |
+| number | `number` | `130` | `int64` |
+| boolean | `boolean` | `true` | `bool` |
+| float | `float` | `35.316262` | `float64` |
+| price | `price` | `2.95` | `float64` |
+| age | `age` | `17` | `int64` |
+| id | `id` | `8814021` | `int64` |
+| letter | `letter` | `c` | `string` |
+| url | `url` | `https://www.example.com/food` | `string` |
+
+### Crypto
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| sha1 | `sha1` | ~` | `string` |
+| sha256 | `sha256` | ~ | `string` |
+| md5 | `md5` | ~ | `string` |
+
+### Date/Time
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| unixTimestamp | `unixTimestamp` | ~` | `int64` |
+| datetime | `datetime` | `2018-03-04T15:01:02Z` | `string` |
+| date | `date` | `2018-03-04` | `string` |
+| time | `time` | `12:19:32` | `string` |
+| dayOfWeek | `dayOfWeek` | `Monday` | `string` |
+| dayOfMonth | `dayOfMonth` | `28` | `int64` |
+| month | `month` | `1` | `int64` |
+| monthName | `monthName` | `January` | `string` |
+
+### Email
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| email | `email` | `cheese@burgler.com` | `string` |
+
+
+### Internet
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| ipv4 | `ipv4` | `205.161.119.32` | `string` |
+| ipv6 | `ipv6` | `ff7f:de06:dbea:a7ff:77ef:eae0"` | `string` |
+
+
+### Person
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| firstName | `firstName` | `Jane` | `string` |
+| lastName | `lastName` | `Doe` | `string` |
+| fullName | `fullName` | `Jane Doe` | `string` |
+
+
+### Phone
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| phone | `phone` | `555-876-5309` | `string` |
+
+
+### Barcodes
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| ean | `ean` | `436967481997487` | `string` |
+
+
+### UUIDs
+| Type | Tag | Example | Expected Type |
+|---|---|---|---|
+| uuid | `uuid` | `bfab5831-4a48-468a-b0ca-358e2378abbd` | `string` |
+
+
+### Words
+| Type | Tag | Description | Expected Type |
+|---|---|---|---|
+| word | `word` | `cheese` | `string` |
+| words | `words` | `[ice, cream, sandwich]` | `[]string` |
 
 ## Custom Tags
 

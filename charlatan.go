@@ -148,7 +148,7 @@ func (c SimpleCharlatan) Generate(thing interface{}) (interface{}, error) {
 	}
 
 	if errs.Errors() != nil {
-		panic(errs.Errors())
+		return nil, errs.Errors()
 	}
 
 	return thing, nil
